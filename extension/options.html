@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Firefox Redirect URL settings</title>
+    <link rel="stylesheet" href="options.css">
+    <script src="rules.js" defer></script>
+    <script src="options.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Firefox Redirect URL</h1>
+      <p>Send matching web links to your selected browser instead of loading them in Firefox.</p>
+      <form id="settings">
+        <fieldset id="controls" disabled>
+          <label class="toggle"><input id="enabled" type="checkbox"> Enable browser routing</label>
+          <label for="browser-path">Target browser executable</label>
+          <p id="browser-help">Choose a detected browser, browse for its executable, or enter an absolute path. Leave blank for the helper's default browser (normally Edge). Select only a trusted browser, not Firefox.</p>
+          <input id="browser-path" type="text" spellcheck="false" aria-describedby="browser-help" placeholder="Absolute browser executable path (for example, C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe)">
+          <div class="buttons">
+            <button id="detect" type="button">Find available browsers</button>
+            <button id="browse" type="button">Browse for executable</button>
+          </div>
+          <label for="browsers">Detected browsers</label>
+          <select id="browsers" disabled>
+            <option value="">Select Find available browsers first</option>
+          </select>
+          <p>Browser changes apply only after you select Save settings.</p>
+          <label for="rules">Allowed hostnames, one per line</label>
+          <p id="rules-help">Use <code>tenant.sharepoint.com</code> for one host or <code>*.sharepoint.com</code> for its subdomains. A wildcard does not include the base domain. Full URLs and paths are not supported. Lines starting with # are comments.</p>
+          <textarea id="rules" rows="12" spellcheck="false" aria-describedby="rules-help"></textarea>
+          <div class="buttons">
+            <button type="submit">Save settings</button>
+            <button id="defaults" type="button">Use default allowlist</button>
+            <button id="check" type="button">Check browser connection</button>
+          </div>
+        </fieldset>
+      </form>
+      <p id="status" role="status" aria-live="polite"></p>
+      <p>The local native helper and your target browser must be installed. If routing fails, the link stays in Firefox. POST forms and embedded frames are not routed.</p>
+    </main>
+  </body>
+</html>
