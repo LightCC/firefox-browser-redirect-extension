@@ -227,3 +227,7 @@ registration/discovery, `.exe` validation, launch flags, and file-picker behavio
 A Windows-only batch-launcher protocol test runs when the Python suite is run on
 Windows; it is skipped on Linux. A real browser-to-browser smoke test and
 interactive system picker check still require the target Windows desktop session.
+
+## License
+
+[MIT](LICENSE). Copyright (c) 2026 Michael Scott Leiter.

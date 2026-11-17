@@ -1,6 +1,7 @@
 {
   "name": "firefox-redirect-url",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "license": "MIT",
   "private": true,
   "description": "Sideloadable Firefox extension that hands allowlisted links to a selected browser",
   "scripts": {
